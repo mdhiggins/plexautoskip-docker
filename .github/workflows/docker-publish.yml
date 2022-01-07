@@ -58,7 +58,7 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/${{ github.repository.name }}:${{ env.tag }}-${{ matrix.platform }}
-            ghcr.io/${{ GITHUB_REPOSITORY }}:${{ env.tag }}-${{ matrix.platform }}
+            ghcr.io/${{ github.repository }}:${{ env.tag }}-${{ matrix.platform }}
 
   publish:
     runs-on: ubuntu-latest
