@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+exec \
+    ${PAS_PATH}/venv/bin/python3 ${PAS_PATH}/main.py -c /config/config.ini
