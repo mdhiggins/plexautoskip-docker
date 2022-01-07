@@ -32,6 +32,4 @@
 |---|---|
 |PUID|User ID|
 |PGID|Group ID|
-|HOST|Local IP address for callback requests, default `127.0.0.1`|
-|SMA_PATH|`/usr/local/sma`|
-|SMA_UPDATE|Default `false`. Set `true` to pull git update of SMA on restart|
+|PAS_PATH|`/usr/local/pas`|
