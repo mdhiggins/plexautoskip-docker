@@ -19,6 +19,8 @@ RUN \
   python3 -m pip install --user virtualenv && \
   python3 -m virtualenv ${PAS_PATH}/venv && \
   ${PAS_PATH}/venv/bin/pip install -r ${PAS_PATH}/setup/requirements.txt && \
+# link config
+  ln -s /config ${PAS_PATH}/config && \
 # cleanup
   apt-get purge --auto-remove -y && \
   apt-get clean && \
