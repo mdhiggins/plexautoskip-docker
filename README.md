@@ -33,3 +33,4 @@
 |PUID|User ID|
 |PGID|Group ID|
 |PAS_PATH|`/usr/local/pas`|
+|PAS_UPDATE|Set to `true` to update PlexAutoSkip from Github master on container start|

@@ -2,6 +2,7 @@ FROM ghcr.io/linuxserver/baseimage-mono:LTS
 LABEL maintainer="mdhiggins <mdhiggins23@gmail.com>"
 
 ENV PAS_PATH /usr/local/pas
+ENV PAS_UPDATE false
 
 # get python3 and git, and install python libraries
 RUN \
@@ -31,5 +32,5 @@ RUN \
 
 VOLUME /config
 
-#COPY extras/ ${PAS_PATH}/
+# COPY extras/ ${PAS_PATH}/
 COPY root/ /

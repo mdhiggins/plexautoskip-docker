@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bash
+
+# env check
+if [[ -z "${PAS_PATH}" ]]; then
+    export PAS_PATH="/usr/local/pas"
+fi
+
+# update from git
+if [[ "${PAS_UPDATE}" == "true" ]]
+then
+    echo "[90-pas-config] Pulling PlexAutoSkip from github master"
+    git -C ${PAS_PATH} pull origin master --quiet
+fi
+
+# permissions
+chown -R abc:abc ${PAS_PATH}
+
+exit $?
