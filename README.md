@@ -24,8 +24,8 @@
     restart: unless-stopped
 ```
 
-### config.ini
-- Mount config.ini containing directory to `/config` using volumes, this should also contain your `logging.ini` file and any generated log files will be included in this directory
+### config directory
+- Mount config.ini and/or custom.json containing directory to `/config` using volumes, this should also contain your `logging.ini` file and any generated log files will be included in this directory
 
 ## Environment Variables
 |Variable|Description|
