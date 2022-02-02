@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-mono:LTS
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15
 LABEL maintainer="mdhiggins <mdhiggins23@gmail.com>"
 
 ENV PAS_PATH /usr/local/pas
@@ -6,11 +6,12 @@ ENV PAS_UPDATE false
 
 # get python3 and git, and install python libraries
 RUN \
-  apt-get update && \
-  apt-get install -y \
+  apk add --no-cache \
     git \
     python3 \
-    python3-pip && \
+    py3-pip && \
+# symlink python3 for compatibility
+  ln -s /usr/bin/python3 /usr/bin/python && \
 # make directory
   mkdir ${PAS_PATH} && \
 # download repo
@@ -23,12 +24,10 @@ RUN \
 # link config
   ln -s /config ${PAS_PATH}/config && \
 # cleanup
-  apt-get purge --auto-remove -y && \
-  apt-get clean && \
+  apk del --purge && \
   rm -rf \
-    /tmp/* \
-    /var/lib/apt/lists/* \
-    /var/tmp/*
+    /root/.cache \
+    /tmp/*
 
 VOLUME /config
 
