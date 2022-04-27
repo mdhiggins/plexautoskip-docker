@@ -9,6 +9,7 @@ fi
 if [[ "${PAS_UPDATE}" == "true" ]]
 then
     echo "[90-pas-config] Pulling PlexAutoSkip from github master"
+    git config --global --add safe.directory ${PAS_PATH}
     git -C ${PAS_PATH} pull origin master --quiet
 fi
 
