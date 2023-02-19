@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15
+FROM ghcr.io/linuxserver/baseimage-alpine:3.17
 LABEL maintainer="mdhiggins <mdhiggins23@gmail.com>"
 
 ENV PAS_PATH /usr/local/pas
