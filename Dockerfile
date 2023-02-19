@@ -10,8 +10,6 @@ RUN \
     git \
     python3 \
     py3-pip && \
-# symlink python3 for compatibility
-  ln -s /usr/bin/python3 /usr/bin/python && \
 # make directory
   mkdir ${PAS_PATH} && \
 # download repo
