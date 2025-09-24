@@ -14,9 +14,7 @@ RUN \
   mkdir ${PAS_PATH} && \
 # download repo
   git clone https://github.com/mdhiggins/PlexAutoSkip.git ${PAS_PATH} && \
-# install pip, venv, and set up a virtual self contained python environment
-  python3 -m pip install --user --upgrade pip && \
-  python3 -m pip install --user virtualenv && \
+# set up a virtual self contained python environment
   python3 -m virtualenv ${PAS_PATH}/venv && \
   ${PAS_PATH}/venv/bin/pip install -r ${PAS_PATH}/setup/requirements.txt && \
 # link config
